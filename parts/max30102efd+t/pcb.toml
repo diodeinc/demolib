@@ -1,0 +1,24 @@
+[module]
+name = "MAX30102EFD+T"
+entry = "max30102efd+t.ato:Max30102efd_t"
+description = "The MAX30102EFD+T is an integrated optical sensor module designed for heart rate and SpO2 (blood oxygen saturation) monitoring applications, featuring a low-power operation and I2C interface for easy integration into wearable and health monitoring devices."
+tags = [
+    "MAX30102EFD+T",
+    "optical sensor",
+    "heart rate monitor",
+    "SpO2 sensor",
+    "biometric sensor",
+    "health monitoring",
+    "I2C interface",
+    "low power",
+]
+
+[module.datasheet]
+url = "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX30102.pdf"
+path = "datasheet/MAX30102EFD+T.pdf"
+
+[interfaces]
+PWR_VDD = { name = "power_vdd", direction = "input", type = "Power" }
+PWR_LED = { name = "power_led", direction = "input", type = "Power" }
+I2C = { name = "i2c", direction = "bidirectional", type = "I2C" }
+IRQ = { name = "int", direction = "output", type = "GPIO" }

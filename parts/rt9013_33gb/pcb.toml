@@ -1,0 +1,8 @@
+[module]
+name = "rt9013_33gb"
+entry = "rt9013_33gb.ato:Rt901333gb"
+tags = [ "LDO regulator", "voltage regulator", "RT9013", "3.3V", "low dropout", "linear regulator", "power management",]
+description = "The RT9013 is a low-dropout (LDO) linear voltage regulator designed to provide a stable output voltage with high efficiency, suitable for various applications in power management."
+
+[dependencies]
+generics = { path = "../../generics" }

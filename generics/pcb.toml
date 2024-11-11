@@ -1,0 +1,5 @@
+[module]
+name = "generics"
+tags = [ "generic", "interfaces",]
+description = "Generic interfaces and types."
+

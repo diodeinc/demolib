@@ -1,0 +1,18 @@
+[module]
+name = "kh-type-c-16p"
+entry = "kh-type-c-16p.ato:USBCConn"
+description = "The USB-C connector is a versatile and reversible interface used for high-speed data transfer and power delivery, supporting various protocols and offering a standardized solution for modern electronic devices."
+tags = [
+    "USB-C",
+    "connector",
+    "reversible",
+    "high-speed",
+    "data transfer",
+    "power delivery",
+    "standardized",
+    "LCSC",
+]
+
+[interfaces]
+VBUS = { name = "power", direction = "output", type = "Power" }
+USB = { name = "usb2", direction = "output", type = "USB2" }

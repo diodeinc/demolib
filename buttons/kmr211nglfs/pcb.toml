@@ -1,0 +1,9 @@
+[module]
+name = "kmr211nglfs"
+entry = "kmr211nglfs.ato:Kmr211nglfs"
+tags = []
+description = "KMR211NGLFS (Tactile Switches)"
+datasheet = "https://www.ckswitches.com/media/1479/kmr2.pdf"
+
+[docs]
+datasheet = "docs/kmr211nglfs.typ"

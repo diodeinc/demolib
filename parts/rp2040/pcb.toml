@@ -1,0 +1,18 @@
+[module]
+name = "RP2040"
+entry = "RP2040Kit.ato:RP2040Kit"
+description = "The RP2040 is a microcontroller designed by Raspberry Pi, featuring a dual-core ARM Cortex-M0+ processor, designed for high performance and low power consumption, making it ideal for embedded systems and IoT applications."
+tags = [ "RP2040", "microcontroller", "Raspberry Pi", "dual-core", "ARM Cortex-M0+", "embedded systems", "IoT", "Pico", "low power",]
+
+[module.datasheet]
+url = "https://datasheets.raspberrypi.org/rp2040/rp2040-datasheet.pdf"
+path = "datasheet/rp2040.pdf"
+
+[interfaces]
+PWR_IN = {name = "power_3v3", direction = "input", type = "Power"}
+I2C = {name = "i2c", direction = "bidirectional", type = "I2C"}
+SPI = {name = "spi", direction = "bidirectional", type = "SPI"}
+QSPI = {name = "qspi", direction = "bidirectional", type = "QSPI"}
+UART = {name = "uart", direction = "bidirectional", type = "UART"}
+USB2 = {name = "usb2", direction = "bidirectional", type = "USB2"}
+

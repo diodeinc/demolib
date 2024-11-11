@@ -1,0 +1,20 @@
+component KMR211NGLFS:
+    datasheet = "https://www.ckswitches.com/media/1479/kmr2.pdf"
+    description = "KMR211NGLFS (Tactile Switches)"
+    footprint = "KMR211NGLFS"
+    manufacturer = "C & K COMPONENTS"
+    mpn = "KMR211NGLFS"
+
+    """Signals"""
+    signal COM_1
+    COM_1 ~ pin 2
+
+    signal COM_2
+    COM_2 ~ pin 3
+
+    signal NO_1
+    NO_1 ~ pin 1
+
+    signal NO_2
+    NO_2 ~ pin 4
+

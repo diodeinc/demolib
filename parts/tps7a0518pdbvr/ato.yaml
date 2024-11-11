@@ -1,0 +1,4 @@
+ato-version: ^0.2.0
+builds:
+  default:
+    entry: tps7a0518pdbvr.ato:Tps7a0518pdbvr

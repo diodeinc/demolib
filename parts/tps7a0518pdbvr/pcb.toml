@@ -1,0 +1,16 @@
+[module]
+name = "tps7a0518pdbvr"
+entry = "tps7a0518pdbvr.ato:Tps7a0518pdbvr"
+tags = [ "LDO", "voltage regulator", "ultra-low dropout", "linear regulator", "Texas Instruments",]
+description = "The TPS7A0518PDBVR is an ultra-low dropout linear voltage regulator from Texas Instruments, designed to provide a stable 1.8V output with high accuracy, making it suitable for noise-sensitive applications."
+
+[module.datasheet]
+url = "https://www.ti.com/lit/ds/tps7a0518.pdf"
+path = "datasheet/tps7a0518pdbvr.pdf"
+
+[dependencies]
+"generics" = {path = "../../generics"}
+
+[interfaces]
+"PWR_IN" = {name = "power_5v0_in", direction = "input", type = "Power"}
+"PWR_OUT 1.8V" = {name = "power_1v8_out", direction = "output", type = "Power"}

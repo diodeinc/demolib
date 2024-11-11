@@ -1,0 +1,53 @@
+from "generics/regulators.ato" import FixedLDO
+from "generics/resistors.ato" import Resistor
+from "generics/capacitors.ato" import Capacitor
+from "generics/interfaces.ato" import GPIO, Power
+
+from "elec/src/RT9013_33GB.ato" import _RT9013_33GB
+
+module Rt901333gb from FixedLDO:
+    """500mA, Low Dropout, Low Noise Ultra-Fast Without Bypass Capacitor CMOS LDO Regulator"""
+
+    """Parameters"""
+    v_in: voltage = 5.5V
+    v_out: voltage = 3.3V
+
+    """Interfaces"""
+    enable = new GPIO
+    # power_in = new Power
+    # power_out = new Power
+
+    """Components"""
+    regulator = new _RT9013_33GB
+    c_in = new Capacitor
+    c_out = new Capacitor
+
+    """Values"""
+    # Source: [page 7, section Applications Information, Applications Information]
+    c_in.value = 1uF +/- 10%
+    c_in.package = "0402"
+
+    # Source: [page 7, section Applications Information, Applications Information]
+    c_out.value = 1uF +/- 10%
+    c_out.package = "0402"
+
+    """Connections"""
+    # Power connections
+    power_in.vcc ~ regulator.VIN
+    power_in.gnd ~ regulator.GND
+
+    # Enable pin
+    enable.io ~ regulator.EN
+    enable.gnd ~ regulator.GND
+
+    # Output
+    power_out.vcc ~ regulator.VOUT
+    power_out.gnd ~ regulator.GND
+    power_in ~ c_in.power
+    power_out ~ c_out.power
+
+    """Validation"""
+    # Source: [page 1, section Features, Features]
+    assert v_in within 2.2V to 5.5V
+    # Source: [page 1, section Features, Features]
+    assert v_out <= (v_in - 250mV)

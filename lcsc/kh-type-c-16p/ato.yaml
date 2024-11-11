@@ -1,0 +1,7 @@
+ato-version: ^0.2.0
+library-id: usb-type-c
+builds:
+  default:
+    entry: kh-type-c-16p.ato:USBCConn
+  usb-type-c-source:
+    entry: kh-type-c-16p.ato:USB_TypeC_Source

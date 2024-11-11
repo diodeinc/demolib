@@ -1,0 +1,22 @@
+[module]
+name = "MAX30208CLB"
+entry = "max30208clb.ato:Max30208clb"
+description = "The MAX30208CLB is a high-accuracy digital temperature sensor with an I2C interface, designed for applications requiring precise temperature measurements, such as healthcare and wearable devices."
+tags = [
+    "temperature sensor",
+    "I2C interface",
+    "digital sensor",
+    "healthcare",
+    "wearable devices",
+    "low power",
+]
+
+[module.datasheet]
+url = "https://datasheets.maximintegrated.com/en/ds/MAX30208.pdf"
+path = "datasheet/MAX30208CLB.pdf"
+
+[interfaces]
+Power = { name = "power", direction = "input", type = "Power" }
+GPIO1 = { name = "gpio1", direction = "output", type = "GPIO" }
+GPIO0 = { name = "gpio0", direction = "output", type = "GPIO" }
+I2C = { name = "i2c", direction = "bidirectional", type = "I2C" }

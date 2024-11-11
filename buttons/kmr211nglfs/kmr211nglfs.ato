@@ -1,0 +1,21 @@
+from "elec/src/generated.ato" import _Kmr211nglfs
+from "elec/src/KMR211NGLFS.ato" import KMR211NGLFS
+
+module Kmr211nglfs from _Kmr211nglfs:
+    """Parameters"""
+
+    """Interfaces"""
+    signal in
+    signal out
+
+    """Components"""
+    ic = new KMR211NGLFS
+
+    """Values"""
+
+    """Connections"""
+    in ~ ic.COM_1
+    in ~ ic.COM_2
+
+    out ~ ic.NO_1
+    out ~ ic.NO_2

@@ -1,0 +1,81 @@
+from "generics/interfaces.ato" import Power, GPIO, I2C
+from "generics/capacitors.ato" import Capacitor
+
+component _MAX30102EFD_T:
+    # Source: [Footprint file]
+    footprint = "MAX30102EFDT"
+    mpn = "MAX30102EFD+T"
+    # Source: [Symbol file]
+    signal NC_1 ~ pin 1
+    signal SCL ~ pin 2
+    signal SDA ~ pin 3
+    signal PGND ~ pin 4
+    signal NC_2 ~ pin 5
+    signal NC_3 ~ pin 6
+    signal NC_4 ~ pin 7
+    signal NC_5 ~ pin 8
+    signal VLED_1 ~ pin 9
+    signal VLED_2 ~ pin 10
+    signal VDD ~ pin 11
+    signal GND ~ pin 12
+    signal n_INT_ ~ pin 13
+    signal NC_6 ~ pin 14
+
+
+module Max30102efd_t:
+    # Units
+    v_in: voltage
+    v_led1: voltage
+    v_led2: voltage
+    
+    # Default values
+    v_in = 1.7V to 2.0V
+    v_led1 = 3.3V to 5.0V
+    v_led2 = 3.3V to 5.0V
+
+    # Interfaces
+    power_vdd = new Power
+    power_led = new Power
+    i2c = new I2C
+    int = new GPIO
+
+    # Components
+    ic = new _MAX30102EFD_T
+    vdd_cap1 = new Capacitor
+    vdd_cap2 = new Capacitor
+    led_cap1 = new Capacitor
+    led_cap2 = new Capacitor
+
+    # Connections
+    power_vdd.vcc ~ ic.VDD
+    power_vdd.gnd ~ ic.GND
+
+    power_led.vcc ~ ic.VLED_1
+    power_led.vcc ~ ic.VLED_2
+    power_led.gnd ~ ic.GND
+
+    i2c.scl ~ ic.SCL
+    i2c.sda ~ ic.SDA
+    
+    int.io ~ ic.n_INT_
+    int.gnd ~ ic.GND
+
+    vdd_cap1.package = "0402"
+    vdd_cap1.value = 10uF +/- 10%
+    vdd_cap1.p1 ~ power_vdd.vcc
+    vdd_cap1.p2 ~ power_vdd.gnd
+
+    vdd_cap2.package = "0402"
+    vdd_cap2.value = 0.1uF +/- 10%
+    vdd_cap2.p1 ~ power_vdd.vcc
+    vdd_cap2.p2 ~ power_vdd.gnd
+
+    led_cap1.package = "0402"
+    led_cap1.value = 4.7uF +/- 10%
+    led_cap1.p1 ~ power_led.vcc
+    led_cap1.p2 ~ power_led.gnd
+
+    led_cap2.package = "0402"
+    led_cap2.value = 0.1uF +/- 10%
+    led_cap2.p1 ~ power_led.vcc
+    led_cap2.p2 ~ power_led.gnd
