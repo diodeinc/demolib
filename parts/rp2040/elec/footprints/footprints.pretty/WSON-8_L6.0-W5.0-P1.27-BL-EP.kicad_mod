@@ -24,7 +24,7 @@
 	(fp_circle (center -1.91 3.40) (end -1.76 3.40) (layer Cmts.User) (width 0.30))
 	(fp_circle (center -1.91 3.95) (end -1.81 3.95) (layer F.SilkS) (width 0.20))
 	(model "${KIPRJMOD}/../../../build//footprints/footprints.3dshapes/WSON-8_L6.0-W5.0-H0.7-P1.27.wrl"
-		(offset (xyz 0.380 0.120 -0.000))
+		(offset (xyz 0 0 0))
 		(scale (xyz 1 1 1))
 		(rotate (xyz 0 0 270))
 	)
